@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int plus(int a, int b);
+int minus(int a, int b);
+int multiple(int a, int b);
+double divide(int a, int b);
+
+int main(void) {
+    int a, b;
+
+    printf("두 수를 입력하세요 : ");
+    scanf("%d %d", &a, &b);
+
+    printf("+ : %d\n", plus(a, b));
+    printf("- : %d\n", minus(a, b));
+    printf("* : %d\n", multiple(a, b));
+    printf("/ : %.2lf\n", divide(a, b));
+
+    return 0;
+}
+
+int plus(int a, int b) {
+    return a + b;
+}
+
+int minus(int a, int b) {
+    return a - b;
+}
+
+
+int multiple(int a, int b) {
+    return a * b;
+}
+
+double divide(int a, int b) {
+    if (b == 0) {
+        printf("0으로 나눌 수 없습니다.\n");
+        return 0.0;
+    }
+    return (double)a / b;
+}
